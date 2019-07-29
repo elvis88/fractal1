@@ -1,0 +1,44 @@
+INFO [07-15|15:58:23.010] No config file , use default configuration. 
+DEBUG[07-15|15:58:23.011] file is not exist.                       path=build/test_sdk/ft/ft/bootnodes
+DEBUG[07-15|15:58:23.011] file is not exist.                       path=build/test_sdk/ft/ft/staticnodes
+DEBUG[07-15|15:58:23.011] file is not exist.                       path=build/test_sdk/ft/ft/trustednodes
+INFO [07-15|15:58:23.011] Allocated cache and file handles         database=build/test_sdk/ft/ft/chaindata cache=768 handles=1024
+INFO [07-15|15:58:23.039] Writing genesis block                    hash=0xfff77195a34bae2cbe56990436ef0ae4f41f1a466a1a7943f7040ecdd19eceba
+INFO [07-15|15:58:23.039] Loaded most recent local full block      number=0 hash=fff771…9eceba td=131072 irreversible=0
+DEBUG[07-15|15:58:23.039] Reinjecting stale transactions           count=0
+INFO [07-15|15:58:23.039] Regenerated local transaction journal    transactions=0 accounts=0
+INFO [07-15|15:58:23.040] Starting mining operation 
+INFO [07-15|15:58:23.040] Transaction pool price threshold updated price=1000000000
+INFO [07-15|15:58:23.040] Starting P2P networking                  NetID=3516845754 UsrNetID=0
+ERROR[07-15|15:58:23.040] Starting peer-to-peer server             err="listen udp :2018: bind: address already in use"
+INFO [07-15|15:58:23.040] start fractal service... 
+DEBUG[07-15|15:58:23.040] IPC registered                           namespace=txpool
+DEBUG[07-15|15:58:23.040] IPC registered                           namespace=ft
+DEBUG[07-15|15:58:23.040] IPC registered                           namespace=ft
+DEBUG[07-15|15:58:23.041] IPC registered                           namespace=ft
+DEBUG[07-15|15:58:23.041] IPC registered                           namespace=account
+DEBUG[07-15|15:58:23.041] IPC registered                           namespace=fee
+DEBUG[07-15|15:58:23.041] IPC registered                           namespace=p2p
+DEBUG[07-15|15:58:23.041] IPC registered                           namespace=debug
+DEBUG[07-15|15:58:23.041] IPC registered                           namespace=miner
+DEBUG[07-15|15:58:23.041] IPC registered                           namespace=dpos
+INFO [07-15|15:58:23.041] IPC endpoint opened                      url=build/test_sdk/ft/ft.ipc
+DEBUG[07-15|15:58:23.041] HTTP registered                          namespace=ft
+DEBUG[07-15|15:58:23.041] HTTP registered                          namespace=ft
+DEBUG[07-15|15:58:23.041] HTTP registered                          namespace=ft
+DEBUG[07-15|15:58:23.041] HTTP registered                          namespace=account
+DEBUG[07-15|15:58:23.041] HTTP registered                          namespace=fee
+DEBUG[07-15|15:58:23.042] HTTP registered                          namespace=dpos
+INFO [07-15|15:58:23.044] IPC endpoint closed                      endpoint=build/test_sdk/ft/ft.ipc
+DEBUG[07-15|15:58:23.044] RPC Server shutdown initiatied 
+INFO [07-15|15:58:23.044] BlockchainHandler stopping... 
+INFO [07-15|15:58:23.044] Downloader stopping... 
+INFO [07-15|15:58:23.044] Downloader stopped. 
+INFO [07-15|15:58:23.044] BlockchainHandler stopped. 
+INFO [07-15|15:58:23.044] Blockchain manager stopped 
+INFO [07-15|15:58:23.044] TxpoolHandler stopping... 
+INFO [07-15|15:58:23.044] TxpoolHandler stopped. 
+INFO [07-15|15:58:23.045] Transaction pool stopped 
+INFO [07-15|15:58:23.045] Database closed                          database=build/test_sdk/ft/ft/chaindata
+INFO [07-15|15:58:23.045] ftservice stopped 
+ERROR[07-15|15:58:23.045] ft start node failed.                    err="listen tcp 127.0.0.1:8545: bind: address already in use"

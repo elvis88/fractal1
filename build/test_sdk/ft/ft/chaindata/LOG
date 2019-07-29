@@ -1,0 +1,8 @@
+=============== Jul 15, 2019 (CST) ===============
+15:58:23.011823 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:58:23.026448 db@open opening
+15:58:23.032720 version@stat F·[] S·0B[] Sc·[]
+15:58:23.036221 db@janitor F·2 G·0
+15:58:23.036681 db@open done T·9.686346ms
+15:58:23.045036 db@close closing
+15:58:23.045246 db@close done T·206.679µs
