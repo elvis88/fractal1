@@ -1542,7 +1542,7 @@ func (dpos *Dpos) IsValidateCandidate2(chain consensus.IChainReader, parent *typ
 	if !has {
 		return "", ErrIllegalCandidatePubKey
 	}
-	if strings.HasPrefix(candidate, tname) == false && strings.Contains(candidate, fmt.Sprintf("%s,", tname)) == false {
+	if strings.HasPrefix(candidate, tname) == false && strings.Contains(candidate, fmt.Sprintf(",%s", tname)) == false {
 		return "", fmt.Errorf("%v %v, except %v %v(%v) index %v (%v epoch) ", errInvalidBlockCandidate, candidate, tname, pstate.ActivatedCandidateSchedule, pstate.UsingCandidateIndexSchedule, offset, pstate.Epoch)
 	}
 	return tname, nil
