@@ -1,4 +1,16 @@
 # [fractal](https://github.com/fractalplatform/fractal) Changelog
+## [0.0.27] - 2019-08-16
+### Fixed
+- [VIM] vm fix stack valid (#416)
+### Added
+- [RPC] add rpc interface: ft_getTransBatch
+
+
+## [0.0.26] - 2019-08-14
+### Fixed
+- [LOG] fix vendor log bug, patch for version 0.0.25 
+
+
 ## [0.0.25] - 2019-08-07
 ### Forked
 - [DPOS] fork3: reduce CandidateAvailableMinQuantity (#416)
@@ -221,6 +233,8 @@
 - [MAKEFILE] add check fmt tag_release release command
 
 
+[0.0.27]: https://github.com/fractalplatform/fractal/compare/v0.0.26...v0.0.27
+[0.0.26]: https://github.com/fractalplatform/fractal/compare/v0.0.25...v0.0.26
 [0.0.25]: https://github.com/fractalplatform/fractal/compare/v0.0.24...v0.0.25
 [0.0.24]: https://github.com/fractalplatform/fractal/compare/v0.0.23...v0.0.24
 [0.0.23]: https://github.com/fractalplatform/fractal/compare/v0.0.22...v0.0.23
