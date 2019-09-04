@@ -194,6 +194,7 @@ func (worker *Worker) mintBlock(timestamp int64, quit chan struct{}) {
 		theader := &types.Header{}
 		worker.FillForkID(theader, state)
 		if strings.Contains(worker.coinbase, ",") {
+			cdpos.IsValidateCandidate()
 			name, err := cdpos.IsValidateCandidate2(worker, header, uint64(timestamp), worker.coinbase, worker.pubKeys, state, worker.force, theader.CurForkID())
 			if err != nil {
 				switch err {
@@ -391,8 +392,8 @@ func (worker *Worker) commitTransactions(work *Work, txs *types.TransactionsByPr
 			return fmt.Errorf("mint the quit block")
 		default:
 		}
-		if work.currentGasPool.Gas() < params.GasTableInstanse.ActionGas {
-			log.Debug("Not enough gas for further transactions", "have", work.currentGasPool, "want", params.GasTableInstanse.ActionGas)
+		if work.currentGasPool.Gas() < params.GasTableInstance.ActionGas {
+			log.Debug("Not enough gas for further transactions", "have", work.currentGasPool, "want", params.GasTableInstance.ActionGas)
 			break
 		}
 
