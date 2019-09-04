@@ -194,7 +194,6 @@ func (worker *Worker) mintBlock(timestamp int64, quit chan struct{}) {
 		theader := &types.Header{}
 		worker.FillForkID(theader, state)
 		if strings.Contains(worker.coinbase, ",") {
-			cdpos.IsValidateCandidate()
 			name, err := cdpos.IsValidateCandidate2(worker, header, uint64(timestamp), worker.coinbase, worker.pubKeys, state, worker.force, theader.CurForkID())
 			if err != nil {
 				switch err {
