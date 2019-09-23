@@ -175,6 +175,11 @@ func (worker *Worker) mintLoop() {
 func (worker *Worker) mintBlock(timestamp int64, quit chan struct{}) {
 	bstart := time.Now()
 	log.Debug("mint block", "timestamp", timestamp)
+
+	oldcoinbase := worker.coinbase
+	defer func() {
+		worker.coinbase = oldcoinbase
+	}()
 	for {
 		select {
 		case <-worker.quit:
