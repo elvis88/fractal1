@@ -1532,6 +1532,10 @@ func (dpos *Dpos) IsValidateCandidate2(chain consensus.IChainReader, parent *typ
 		return "", fmt.Errorf("%v %v, except %v %v(%v) index %v (%v epoch) ", errInvalidBlockCandidate, candidate, tname, pstate.ActivatedCandidateSchedule, pstate.UsingCandidateIndexSchedule, offset, pstate.Epoch)
 	}
 
+	if strings.HasPrefix(candidate, tname) == false && strings.Contains(candidate, fmt.Sprintf(",%s", tname)) == false {
+		return "", fmt.Errorf("%v %v, except %v %v(%v) index %v (%v epoch) ", errInvalidBlockCandidate, candidate, tname, pstate.ActivatedCandidateSchedule, pstate.UsingCandidateIndexSchedule, offset, pstate.Epoch)
+	}
+
 	db := &stateDB{
 		name:  dpos.config.AccountName,
 		state: state,
@@ -1545,9 +1549,6 @@ func (dpos *Dpos) IsValidateCandidate2(chain consensus.IChainReader, parent *typ
 	}
 	if !has {
 		return "", ErrIllegalCandidatePubKey
-	}
-	if strings.HasPrefix(candidate, tname) == false && strings.Contains(candidate, fmt.Sprintf(",%s", tname)) == false {
-		return "", fmt.Errorf("%v %v, except %v %v(%v) index %v (%v epoch) ", errInvalidBlockCandidate, candidate, tname, pstate.ActivatedCandidateSchedule, pstate.UsingCandidateIndexSchedule, offset, pstate.Epoch)
 	}
 	return tname, nil
 }
