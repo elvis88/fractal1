@@ -139,6 +139,8 @@ func (st *StateTransition) TransitionDb() (ret []byte, usedGas uint64, failed bo
 		fallthrough
 	case actionType == types.UpdateCandidate:
 		fallthrough
+	case actionType == types.UpdateCandidatePubKey:
+		fallthrough
 	case actionType == types.UnregCandidate:
 		fallthrough
 	case actionType == types.VoteCandidate:
@@ -188,6 +190,11 @@ func (st *StateTransition) TransitionDb() (ret []byte, usedGas uint64, failed bo
 	if err := st.distributeFee(); err != nil {
 		return ret, st.gasUsed(), true, err, vmerr
 	}
+
+	// action := types.NewAction(types.Transfer, st.from, common.Name(st.chainConfig.FeeName), 0, st.assetID, 0, big.NewInt(0).SetUint64(st.gasUsed()), nil, nil)
+	// internalAction := &types.InternalAction{Action: action.NewRPCAction(0), ActionType: "addfee", GasUsed: 0, GasLimit: 0, Depth: 0}
+	// evm.InternalTxs = append(evm.InternalTxs, internalAction)
+
 	return ret, st.gasUsed(), vmerr != nil, nil, vmerr
 }
 
@@ -242,6 +249,8 @@ func (st *StateTransition) distributeGas(intrinsicGas uint64) {
 	case types.RegCandidate:
 		fallthrough
 	case types.UpdateCandidate:
+		fallthrough
+	case types.UpdateCandidatePubKey:
 		fallthrough
 	case types.UnregCandidate:
 		fallthrough
