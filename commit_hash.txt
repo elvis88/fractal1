@@ -1,1 +1,1 @@
-v0.0.30-45-gca840c4+branch.dpos_miner_fork
+v0.0.30-45-g9dba6c9+branch.dpos_bug4
